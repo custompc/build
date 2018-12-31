@@ -144,7 +144,9 @@ window.onclick = function(event) {
 }
 		
 		window.onclick = function(event) {
+			if (event.target == document.getElementById("success")) {
     document.getElementById("success").style.display = "none";
+			}
 }
 </script>
 </html>
