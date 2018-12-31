@@ -73,6 +73,14 @@
   </div>
 </div>
 	
+	<div id="success" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h1 style ="text-align:center">Part Added to Build!</h1>
+	 <img width = 100% src = "http://clipart-library.com/images/kiMKoEp4T.png">
+  </div>
+</div>
+	
   <div class = "processordiv" id ="processor">
   <h1 class ="header">Select your Processor</h1> 
   <button id ="showbtn" onclick= "showoc()">Hide OC</button>
@@ -129,6 +137,7 @@ span.onclick = function() {
 }
 bt2.onclick = function() {
   modal.style.display = "none";
+	document.getElementbyId("success").style.display = 
 }		
 
 // When the user clicks anywhere outside of the modal, close it
