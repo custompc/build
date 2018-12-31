@@ -54,20 +54,19 @@
 
 <body>
 	<!-- The Modal -->
-<div id="myModal" class="modal">
-
+<div id="9900modal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <p>Intel i9-9900k</p>
   </div>
-
 </div>
+	
   <div class = "processordiv" id ="processor">
   <h1 class ="header">Select your Processor</h1> 
   <button id ="showbtn" onclick= "showoc()">Hide OC</button>
   <div id = "ocp">  
-   <button id = "myBtn" ><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$549.99</h2></div></button>
+   <button id = "myBtn" onclick ="document.getElementById('9900modal').style.display = 'block'"><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$549.99</h2></div></button>
   <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'"><div class = "item"><h3 class = "header">i7-9700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg" width ="100%"><h2 class = "header">$399.89</h2></div></button>
    <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'"><div class = "item"><h3 class = "header">i5-9600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$244.89</h2></div></button>
     <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'"><div class = "item"><h3 class = "header">i7-8700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg" width ="100%"><h2 class = "header">$369.99</h2></div></button>
@@ -110,10 +109,6 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
