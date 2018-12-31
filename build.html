@@ -68,7 +68,7 @@
 		  <li id = "coth"></li>
 		  <li id ="cgpu"></li>	  
 	  </ul>
-	  <button id = "procBtn">Add Part to Build</button>
+	  <button id = "procBtn" onclick = "document.getElementById('myModal').style.display = 'none'; document.getElementById('success').style.display = 'block'">Add Part to Build</button>
 	  
   </div>
 </div>
@@ -77,7 +77,7 @@
   <!-- Modal content -->
   <div class="modal-content">
     <h1 style ="text-align:center">Part Added to Build!</h1>
-	 <img width = "100%" src = "http://clipart-library.com/images/kiMKoEp4T.png">
+	 <img src = "http://clipart-library.com/images/kiMKoEp4T.png" width = "100%">
   </div>
 </div>
 	
@@ -125,7 +125,6 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-var bt2 = document.getElementById("procBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -135,10 +134,7 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
-bt2.onclick = function() {
-  modal.style.display = "none";
-	document.getElementbyId("success").style.display = "block";
-}		
+		
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
