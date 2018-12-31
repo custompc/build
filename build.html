@@ -62,14 +62,13 @@
     <h1 id ="procName" style ="text-align:center"></h1>
 	  <img width = 50% id = "procImg" style = "display:inline-block; margin-right:auto; margin-left:auto" src = "">
 	  <ul>
-		  <li>8 Cores / 16 Threads</li>
-<li>3.60 GHz up to 5.00 GHz / 16 MB Cache</li>
-<li>Compatible only with Motherboards based on Intel 300 Series Chipsets</li>
-		  <li>Intel Optane Memory Supported</li>
-		  <li>Intel UHD Graphics 630</li>
-			  
+		  <li id = "core">8 Cores / 16 Threads</li>
+<li id = "cosp">3.60 GHz up to 5.00 GHz / 16 MB Cache</li>
+<li id ="cocomp">Compatible only with Motherboards based on Intel 300 Series Chipsets</li>
+		  <li id = "coth">Intel Optane Memory Supported</li>
+		  <li id ="cgpu">Intel UHD Graphics 630</li>	  
 	  </ul>
-	  <button id = "procBtn" style="margin-left:auto; margin-right:auto">Add Part to Build</button>
+	  <button id = "procBtn">Add Part to Build</button>
 	  
   </div>
 </div>
@@ -118,6 +117,7 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
+var bt2 = document.getElementById("procBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -127,6 +127,9 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+bt2.onclick = function() {
+  modal.style.display = "none";
+}		
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
