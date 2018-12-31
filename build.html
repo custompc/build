@@ -10,14 +10,86 @@
       .item {margin:auto; display:inline-block; width:30%}
     .processordiv {margin:auto}
      
-  </style>
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+</style>
 </head>
 
 <body>
   <div class = "processordiv" id ="processor">
   <h1 class ="header">Select your Processor</h1> 
-   <input type="checkbox" name="oc" value="oc" style = "margin:auto">Overclockable?<br>
- 
+    <h3>Overclocking?</h3>
+    <label class="container">Yes
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">No
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+    
    <a href = ""><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$549.99</h2></div></a> 
   <a href = ""><div class = "item"><h3 class = "header">i7-9700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg" width ="100%"><h2 class = "header">$399.89</h2></div></a>
    <a href = ""><div class = "item"><h3 class = "header">i5-9600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$244.89</h2></div></a> 
