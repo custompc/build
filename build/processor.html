@@ -7,11 +7,8 @@
   <title>Start a New Build</title>
   <style>
       .header { text-align:center}
-      .item {margin:auto; display:inline-block; width:40%}
-    .processordiv {margin:auto}
+      .item {width:30%; margin:auto}
      
-	</style>
-	<style>
 	.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -61,9 +58,12 @@
     <span class="close">&times;</span>
     <h1 id ="procName" style ="text-align:center"></h1>
 	  <img width = "50%" id = "procImg" style = "display:block; margin-right:auto; margin-left:auto" src = "">
+      <br>
 	  <form>
+      <div style = "text-align:center">
 	  	<input type = "text" name = "amountp" value ="1" size = "2" maxlength = "2" style = "text-align:center; margin-right:auto;margin-left:auto">
-	  	<button style = "display:inline-block" id = "procBtn" onclick = "document.getElementById('myModal').style.display = 'none'; ">Add to Build</button>
+	  	<button style = "display:inline-block;" id = "procBtn" onclick = "document.getElementById('myModal').style.display = 'none'; ">Add to Build</button>
+        </div>
 	  </form>
 	  <ul style = "display:inline-block">
 		  <li id = "core"></li>
@@ -75,44 +75,97 @@
   </div>
 </div>
 	
-  <div class = "processordiv" id ="processor">
   <h1 class ="header">Select your Processor</h1> 
-  <button id ="showbtn" onclick= "showoc()">Hide OC</button>
-  <div id = "ocp">  
-  <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i9-9900k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg'; document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 5.00 GHz / 16 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$549.99</h2></div></button>
-  <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-9700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg';document.getElementById('core').innerText = '8 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.90 GHz / 12 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i7-9700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg" width ="100%"><h2 class = "header">$399.89</h2></div></button>
-   <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-9600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.60 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-9600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$244.89</h2></div></button>
-    <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.70 GHz / 12 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i7-8700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg" width ="100%"><h2 class = "header">$369.99</h2></div></button>
-    <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.30 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$259.89</h2></div></button>
-	  </div>
-	  <div id = "nocp" style ="display:none">
-		  <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.60 GHz / 12 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i7-8700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>
-  		<button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600'; document.getElementById('procImg').src = 'https://images10.newegg.com/NeweggImage/ProductImageCompressAll1280/19-117-885-V03.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.10 GHz up to 4.30 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8600</h3><img src ="https://images10.newegg.com/NeweggImage/ProductImageCompressAll1280/19-117-885-V03.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$249.99</h2></div></button> 
-		 <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8500'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.00 GHz up to 4.10 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8500</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$234.99</h2></div></button>
-	 <button id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8400'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '2.80 GHz up to 4.00 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8400</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
-
+  <div id = "procops" style = "text-align: center">
+	<label><input onclick = "adjops()" id = "inc" checked type="checkbox" />Intel</label>
+	<label><input onclick = "adjops()" id = "amc" type="checkbox" />AMD</label>
+	<label><input onclick = "adjops()" id = "occ" checked type="checkbox" />Overclockable</label>
+  </div>
+  <div id = "intelex" style = "text-align:center">
+    <label><input onclick = "adjops()" id = "inine" checked type="checkbox" />9th gen</label>
+	<label><input onclick = "adjops()" id = "ieight" checked type="checkbox" />8th gen</label>
+   </div>
+	<div id = "noresults" style = "display: none;text-align:center">
+    	<h2 >No results found for these settings...</h2>
+    </div>
+  <div id = "ninethgen" style = "display:inline-block">  
+  <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i9-9900k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg'; document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 5.00 GHz / 16 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$549.99</h2></div></button>
+  <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-9700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg';document.getElementById('core').innerText = '8 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.90 GHz / 12 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i7-9700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg" width ="100%"><h2 class = "header">$399.89</h2></div></button>
+   <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-9600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.60 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-9600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$244.89</h2></div></button>
+   </div>
+   <div id = "eighthgen" style ="display:inline-block">
+   <div id = "eighthgenoc">
+    <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.70 GHz / 12 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i7-8700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg" width ="100%"><h2 class = "header">$369.99</h2></div></button>
+    <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.30 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$259.89</h2></div></button>
+    </div>
+    <div id = "eighthgennoc">
+		  <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.60 GHz / 12 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i7-8700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>
+  		<button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.10 GHz up to 4.30 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8600</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$249.99</h2></div></button> 
+		 <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8500'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.00 GHz up to 4.10 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8500</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$234.99</h2></div></button>
+	 <button style= "width:33%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8400'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '2.80 GHz up to 4.00 GHz / 9 MB Cache'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Intel Optane Memory Supported'; document.getElementById('cgpu').innerText = 'Intel UHD Graphics 630';"><div class = "item"><h3 class = "header">i5-8400</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg" width ="100%"><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
+</div>
   </div>
   <script>
-	  
-	  function showoc() {
-		  var y = document.getElementById("nocp");
-		   var x = document.getElementById("ocp");
-		  var s = document.getElementById("showbtn");
-  if (x.style.display === "none") {
-    x.style.display = "inline-block";
-	y.style.display = "none";
-	  s.innerHTML = "Hide OC";
-	  
-	
-  } else {
-    x.style.display = "none";
-	  y.style.display = "inline-block"; 
-	  s.innerHTML = "Show OC";
-  }
-	  }
-	</script>
-	
-	<script>
+	  function adjops() {
+		  var x = document.getElementById("ninethgen");
+		  var y = document.getElementById("eighthgenoc");
+          var z = document.getElementById("eighthgennoc");
+          var nores = document.getElementById("noresults");
+          var ei = document.getElementById("ieight");
+          var ni = document.getElementById("inine");
+          var intel = document.getElementById("inc");
+          var am = document.getElementById("amc");
+          var oc = document.getElementById("occ");
+          
+          if (intel.checked == true) {
+          	document.getElementById("intelex").style.display = "block";
+            if (ni.checked == true && ei.checked == false && oc.checked == false) {
+          	x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "none";
+            nores.style.display = "block";
+          } else if (ni.checked == true && ei.checked == false && oc.checked == true){
+          	x.style.display = "inline-block";
+            y.style.display = "none";
+            z.style.display = "none";
+            nores.style.display = "none";
+          } else if (ni.checked == false && ei.checked == true && oc.checked == true) {
+          	x.style.display = "none";
+            y.style.display = "inline-block";
+            z.style.display = "none";
+            nores.style.display = "none";
+          } else if (ni.checked == false && ei.checked == true && oc.checked == false) {
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "inline-block";
+            nores.style.display = "none";
+          } else if (ni.checked == true && ei.checked == true && oc.checked == true) {
+          	x.style.display = "inline-block";
+            y.style.display = "inline-block";
+            z.style.display = "none";
+            nores.style.display = "none";
+          } else if (ni.checked == true && ei.checked == true && oc.checked == false) {
+          	x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "inline-block";
+            nores.style.display = "none";
+          } else {
+          	x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "none";
+            nores.style.display = "block";
+          }
+          } else {
+          	document.getElementById("intelex").style.display = "none";
+            x.style.display = "none";
+            y.style.display = "none";
+            z.style.display = "none";
+            nores.style.display = "block";
+          }
+          
+ 
+
+}
 // Get the modal
 		
 var modal = document.getElementById('myModal');
