@@ -117,10 +117,13 @@
 
 <div id = "gskill" style = "display:none">
 
+<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = '16GB (2x8) | 3200 MHz | RGB'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImageCompressAll1280/20-232-748-01.jpg'; document.getElementById('core').innerText = 'DDR4 3200 (PC4 25600)'; document.getElementById('cosp').innerText = 'Timing 16-18-18-38'; document.getElementById('cocomp').innerText = 'CAS Latency 16'; document.getElementById('coth').innerText = 'Voltage 1.35V'; document.getElementById('cgpu').href = 'https://www.gskill.com/en/product/f4-3200c16d-16gtzr';"><div class = "item"><h3 class = "header">16GB | 3200 MHz | RGB</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImageCompressAll1280/20-232-748-01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$139.99</h2></div></button>
+
 </div>
 
 
-<div id = "hyperx">
+<div id = "hyperx" style = "display:none">
+<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = '16GB (2x8) | 3000 MHz'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/ProductImageCompressAll1280/20-104-698-Z01.jpg'; document.getElementById('core').innerText = 'DDR4 3000 (PC4 24000)'; document.getElementById('cosp').innerText = 'Timing 15-17-17-35'; document.getElementById('cocomp').innerText = 'CAS Latency 15'; document.getElementById('coth').innerText = 'Voltage 1.35V'; document.getElementById('cgpu').href = 'https://www.hyperxgaming.com/us/memory/predator-ddr4?Model=Predator%20DDR4&Speed=3000MHz&Module%20Capacity=8GB&Kit=Kit%20of%202';"><div class = "item"><h3 class = "header">16GB | 3000 MHz</h3><img src ="https://c1.neweggimages.com/ProductImageCompressAll1280/20-104-698-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$169.99</h2></div></button>
 </div>
 
 
@@ -134,7 +137,7 @@
         var showgskill = document.getElementById("showgskill");
         var showhyperx = document.getElementById("showhyperx");
         
-        if (showcorsair.checked == true && showgskill.checked == true && showhyperx.checked) {
+        if (showcorsair.checked == true && showgskill.checked == true && showhyperx.checked == true) {
         	nores.style.display = "none";
                 x.style.display = "inline-block";
                 y.style.display = "inline-block";
@@ -172,6 +175,7 @@
         } else {
             x.style.display = "none";
             y.style.display = "none";
+            z.style.display = "none";
             nores.style.display = "block";
         }    
     }
