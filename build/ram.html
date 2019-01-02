@@ -1,0 +1,172 @@
+<!doctype html>
+
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Start a New Build</title>
+	<style>
+  	.header { text-align:center}
+    .item {width:100%; display:inline-block}
+     
+	.modal {
+  		display: none; /* Hidden by default */
+  		position: fixed; /* Stay in place */
+ 		z-index: 1; /* Sit on top */
+  		padding-top: 8%; /* Location of the box */
+  		left: 0;
+  		top: 0;
+  		width: 100%; /* Full width */
+  		height: 100%; /* Full height */
+  		overflow: auto; /* Enable scroll if needed */
+  		background-color: rgb(0,0,0); /* Fallback color */
+  		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	.modal-content {
+  		background-color: #fefefe;
+  		margin: auto;
+  		padding: 5 px;
+  		border: 1px solid #888;
+ 		width: 80%;
+	}
+
+	.close {
+  		color: #aaaaaa;
+  		float: right;
+  		font-size: 28px;
+  		font-weight: bold;
+	}
+
+	.close:hover, .close:focus {
+  		color: #000;
+  		text-decoration: none;
+  		cursor: pointer;
+	}
+
+	</style>
+</head>
+
+<body>
+
+<div id="myModal" class="modal">
+	<div class="modal-content">
+    	<span class="close">&times;</span>
+    	<h1 id ="procName" style ="text-align:center"></h1>
+	  	<img width = "50%" id = "procImg" style = "display:block; margin-right:auto; margin-left:auto" src = "" alt = "">
+      	<br>
+	  	<form>
+      		<div style = "text-align:center">
+	  			<input type = "text" name = "amountp" value ="1" size = "2" maxlength = "2" style = "text-align:center; margin-right:auto;margin-left:auto">
+	  			<button style = "display:inline-block;" id = "procBtn" onclick = "document.getElementById('myModal').style.display = 'none'; ">Add to Build</button>
+        	</div>
+	  	</form>
+        <div id = "cpudata" style = "text-align:center">
+				<p id = "core"></p>
+				<p id = "cosp"></p>
+				<p id ="cocomp"></p>
+		  		<p id = "coth"></p>
+		  		<a id ="cgpu" href ="">View Full Specs</a>	  
+        </div>
+  	</div>
+</div>
+	
+<h1 class ="header">Select a CPU</h1> 
+
+<div onclick = "adjops()" id = "procops" style = "text-align:center">
+	<label><input id = "showintel" type="checkbox" />Intel</label>
+	<label><input id = "showamd" type="checkbox" />AMD</label>
+</div>
+
+<br>
+
+<div id = "noresults" style = "display: none; text-align:center">
+    <h2 >No results found...</h2>
+</div>
+
+<div id = "intel" style = "display:none">  
+
+	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i9-9900k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg'; document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 5.00 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/186605/Intel-Core-i9-9900K-Processor-16M-Cache-up-to-5-00-GHz-';"><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$549.99</h2></div></button>
+    
+	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-9700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg';document.getElementById('core').innerText = '8 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/186604/Intel-Core-i7-9700K-Processor-12M-Cache-up-to-4-90-GHz-';"><div class = "item"><h3 class = "header">i7-9700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg" width ="100%" alt = ""><h2 class = "header">$399.89</h2></div></button>
+    
+	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-9600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.60 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/134896/Intel-Core-i5-9600K-Processor-9M-Cache-up-to-4-60-GHz-';"><div class = "item"><h3 class = "header">i5-9600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$244.89</h2></div></button>
+    
+    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126684/Intel-Core-i7-8700K-Processor-12M-Cache-up-to-4-70-GHz-';"><div class = "item"><h3 class = "header">i7-8700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg" width ="100%" alt = ""><h2 class = "header">$369.99</h2></div></button>
+    
+    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.60 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126686/Intel-Core-i7-8700-Processor-12M-Cache-up-to-4-60-GHz-';"><div class = "item"><h3 class = "header">i7-8700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>
+        
+    	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126685/Intel-Core-i5-8600K-Processor-9M-Cache-up-to-4-30-GHz-';"><div class = "item"><h3 class = "header">i5-8600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$259.89</h2></div></button>
+    
+  		<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.10 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/129937/Intel-Core-i5-8600-Processor-9M-Cache-up-to-4-30-GHz-';"><div class = "item"><h3 class = "header">i5-8600</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$249.99</h2></div></button> 
+        
+		 <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8500'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.00 GHz up to 4.10 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/129939/Intel-Core-i5-8500-Processor-9M-Cache-up-to-4-10-GHz-';"><div class = "item"><h3 class = "header">i5-8500</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$234.99</h2></div></button>
+         
+	 <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8400'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '2.80 GHz up to 4.00 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126687/Intel-Core-i5-8400-Processor-9M-Cache-up-to-4-00-GHz-';"><div class = "item"><h3 class = "header">i5-8400</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
+     
+</div>
+
+<div id = "amd" style = "display:none">
+
+	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 7 2700x'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg';document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 105 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-7-2700x';"><div class = "item"><h3 class = "header">Ryzen 7 2700x</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>	
+    
+    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 7 2700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg';document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.10 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-7-2700';"><div class = "item"><h3 class = "header">Ryzen 7 2700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$269.99</h2></div></button>	
+    
+    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2600x'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.20 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-5-2600x';"><div class = "item"><h3 class = "header">Ryzen 5 2600x</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$219.99</h2></div></button>	
+    
+    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2600'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.40 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-5-2600';"><div class = "item"><h3 class = "header">Ryzen 5 2600</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
+    
+     <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2400G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg';document.getElementById('core').innerText = '4 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-5-2400g';"><div class = "item"><h3 class = "header">Ryzen 5 2400G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$159.99</h2></div></button>	
+    
+    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 3 2200G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg';document.getElementById('core').innerText = '4 Cores / 4 Threads'; document.getElementById('cosp').innerText = '3.50 GHz up to 3.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-3-2200g';"><div class = "item"><h3 class = "header">Ryzen 3 2200G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$99.99</h2></div></button>	
+    
+    
+    
+</div>
+
+
+<script>
+	function adjops() {
+		var x = document.getElementById("intel");
+        var y = document.getElementById("amd");
+        var nores = document.getElementById("noresults");
+        var showintel = document.getElementById("showintel");
+        var showamd = document.getElementById("showamd");
+        
+        if (showintel.checked == true && showamd.checked == true) {
+        	nores.style.display = "none";
+                x.style.display = "inline-block";
+                y.style.display = "inline-block";
+        } else if (showintel.checked == true) {
+        	nores.style.display = "none";
+                x.style.display = "inline-block";
+                y.style.display = "none";
+        } else if (showamd.checked == true) {
+        		nores.style.display = "none";
+                x.style.display = "none";
+                y.style.display = "inline-block";
+        } else {
+            x.style.display = "none";
+            y.style.display = "none";
+            nores.style.display = "block";
+        }    
+    }
+		
+var modal = document.getElementById('myModal');
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+		
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  } 
+}
+</script>
+</body>
+</html>
