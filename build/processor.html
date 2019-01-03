@@ -10,39 +10,59 @@
     .item {width:100%; display:inline-block}
      
 	.modal {
-  		display: none; /* Hidden by default */
-  		position: fixed; /* Stay in place */
- 		z-index: 1; /* Sit on top */
-  		padding-top: 8%; /* Location of the box */
-  		left: 0;
-  		top: 0;
-  		width: 100%; /* Full width */
-  		height: 100%; /* Full height */
-  		overflow: auto; /* Enable scroll if needed */
-  		background-color: rgb(0,0,0); /* Fallback color */
-  		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-	}
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 5%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-	.modal-content {
-  		background-color: #fefefe;
-  		margin: auto;
-  		padding: 5 px;
-  		border: 1px solid #888;
- 		width: 80%;
-	}
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
-	.close {
-  		color: #aaaaaa;
-  		float: right;
-  		font-size: 28px;
-  		font-weight: bold;
-	}
 
-	.close:hover, .close:focus {
-  		color: #000;
-  		text-decoration: none;
-  		cursor: pointer;
-	}
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #FF0000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #1C1571;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px; border:2px}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #1C1571;
+  color: white;
+}
 
 	</style>
 </head>
@@ -50,24 +70,31 @@
 <body>
 
 <div id="myModal" class="modal">
-	<div class="modal-content">
-    	<span class="close">&times;</span>
-    	<h1 id ="procName" style ="text-align:center"></h1>
+
+  <!-- Modal content -->
+  <div class="modal-content">
+<div class="modal-header" style ="text-align:center">
+      <span class="close">&times;</span>
+      <h1 id ="procName"></h1>
+    </div>
+    <br>
+    	<div class="modal-body">
 	  	<img width = "50%" id = "procImg" style = "display:block; margin-right:auto; margin-left:auto" src = "" alt = "">
       	<br>
-
-      		<div style = "text-align:center">
-	  		<input type = "text" name = "amountp" value ="1" size = "2" maxlength = "2" style = "text-align:center; margin-right:auto;margin-left:auto">
-	  		<a href = "https://custompc.github.io/pc/build/ram"><button style = "display:inline-block;" id = "procBtn">Add to Build</button></a>
-        	</div>
         <div id = "cpudata" style = "text-align:center">
 				<p id = "core"></p>
 				<p id = "cosp"></p>
-				<p id ="cocomp"></p>
+				<p id = "cocomp"></p>
 		  		<p id = "coth"></p>
-		  		<a id ="cgpu" href ="">View Full Specs</a>	  
+		  		<a id = "cgpu" href ="">View Full Specs</a>	  
         </div>
-  	</div>
+	</div>
+    <div class="modal-footer" style = "text-align:center">
+	  		<input type = "text" name = "amountp" value ="1" size = "2" maxlength = "2" style = "text-align:center; margin-right:auto; margin-left:auto">
+	  		<a href = "https://custompc.github.io/pc/build/ram"><button style = "display:inline-block;" id = "procBtn">Add to Build</button></a>
+        	</div>
+      
+    </div>
 </div>
 	
 <h1 class ="header">Choose a CPU</h1> 
@@ -82,19 +109,6 @@
 <div id = "noresults" style = "display: none; text-align:center">
     <h2>Select a Manufacturer</h2>
 </div>
-
-<script>
-	var img = document.getElementById('procImg');
-    var pname = document.getElementById('procName');
-    var desone = document.getElementById('core');
-    var destwo = document.getElementById('cosp');
-    var desthree = document.getElementById('cocomp');
-    var desfour = document.getElementById('coth');
-    var link = document.getElementById('cgpu');
-    function openModal() {
-    	document.getElementById('myModal').style.display = 'block'
-   }
-</script>
                    
 
 <div id = "intel" style = "display:none">  
@@ -140,17 +154,22 @@
     
      <button style= "width:32%" id = "myBtn14" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2400G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg';document.getElementById('core').innerText = '4 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-5-2400g';"><div class = "item"><h3 class = "header">Ryzen 5 2400G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$159.99</h2></div></button>	
     
-    <button style= "width:32%" id = "myBtn15" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 3 2200G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg';document.getElementById('core').innerText = '4 Cores / 4 Threads'; document.getElementById('cosp').innerText = '3.50 GHz up to 3.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-3-2200g';"><div class = "item"><h3 class = "header">Ryzen 3 2200G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$99.99</h2></div></button>	
-    
-    
-    
+    <button style= "width:32%" id = "myBtn15" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 3 2200G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg';document.getElementById('core').innerText = '4 Cores / 4 Threads'; document.getElementById('cosp').innerText = '3.50 GHz up to 3.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-3-2200g';"><div class = "item"><h3 class = "header">Ryzen 3 2200G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$99.99</h2></div></button>	    
 </div>
 
 
 <script>
+var img = document.getElementById('procImg');
+    var pname = document.getElementById('procName');
+    var desone = document.getElementById('core');
+    var destwo = document.getElementById('cosp');
+    var desthree = document.getElementById('cocomp');
+    var desfour = document.getElementById('coth');
+    var link = document.getElementById('cgpu');
+    
 var proclist = ['i9-9900k', 'i7-9700k', 'i5-9600k',
-    				'i7 8700k', 'i7 8700', 'i5 8600k',
-                    'i5 8600', 'i5 8500', 'i5 8400',
+    				'i7-8700k', 'i7-8700', 'i5-8600k',
+                    'i5-8600', 'i5-8500', 'i5-8400',
                     'Ryzen 7 2700x', 'Ryzen 7 2700', 'Ryzen 5 2600x',
                     'Ryzen 5 2600', 'Ryzen 5 2400G', 'Ryzen 3 2200G'];                                    
 var priceList = ['$549.99', '$399.99', '$259.99',
@@ -191,7 +210,9 @@ var pg = ['Compatible only with Motherboards based on Intel 300 Series Chipsets'
 'Intel® UHD Graphics 630',
 'Intel® UHD Graphics 630'];
 
-var launch = ['Q4 2018', 'Q4 2018', 'Q4 2018', 'Q4 2017', 'Q4 2017','Q4 2017', 'Q2 2018', 'Q2 2018', 'Q4 2017'];
+var launch = ['Q4 2018', 'Q4 2018', 'Q4 2018', 
+			  'Q4 2017', 'Q4 2017','Q4 2017', 
+              'Q2 2018', 'Q2 2018', 'Q4 2017'];
 
 var info = ['https://ark.intel.com/products/186605/Intel-Core-i9-9900K-Processor-16M-Cache-up-to-5-00-GHz',
 'https://ark.intel.com/products/186604/Intel-Core-i7-9700K-Processor-12M-Cache-up-to-4-90-GHz-',
@@ -233,8 +254,6 @@ var info = ['https://ark.intel.com/products/186605/Intel-Core-i9-9900K-Processor
         var nores = document.getElementById("noresults");
         var showintel = document.getElementById("showintel");
         var showamd = document.getElementById("showamd");
-        var i;
-        
         if (showintel.checked == true && showamd.checked == true) {
         	nores.style.display = "none";
                 x.style.display = "inline-block";
@@ -253,20 +272,30 @@ var info = ['https://ark.intel.com/products/186605/Intel-Core-i9-9900K-Processor
             nores.style.display = "block";
         }    
     }
+
+function openModal() {
+    	document.getElementById('myModal').style.display = 'block';
+   }
 		
 var modal = document.getElementById('myModal');
 
+// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
-		
+
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
-  } 
+  }
 }
+</script>
+
+  
 </script>
 </body>
 </html>
