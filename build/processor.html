@@ -70,9 +70,9 @@
   	</div>
 </div>
 	
-<h1 class ="header">Select a CPU</h1> 
+<h1 class ="header">Choose a CPU</h1> 
 
-<div onclick = "adjops()" id = "procops" style = "text-align:center">
+<div onclick = "adjops();" id = "procops" style = "text-align:center">
 	<label><input id = "showintel" type="checkbox" />Intel</label>
 	<label><input id = "showamd" type="checkbox" />AMD</label>
 </div>
@@ -83,41 +83,64 @@
     <h2>Select a Manufacturer</h2>
 </div>
 
-<div id = "intel" style = "display:none">  
+<script>
+	var img = document.getElementById('procImg');
+    var pname = document.getElementById('procName');
+    var desone = document.getElementById('core');
+    var destwo = document.getElementById('cosp');
+    var desthree = document.getElementById('cocomp');
+    var desfour = document.getElementById('coth');
+    var link = document.getElementById('cgpu');
+    function openModal() {
+    	document.getElementById('myModal').style.display = 'block'
+   }
+</script>
+                   
 
-	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i9-9900k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg'; document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 5.00 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/186605/Intel-Core-i9-9900K-Processor-16M-Cache-up-to-5-00-GHz-';"><div class = "item"><h3 class = "header">i9-9900k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$549.99</h2></div></button>
+<div id = "intel" style = "display:none">  
+	<button style= "width:32%" id = "myBtn1" onclick ="openModal(); pname.innerText = proclist[0]; img.src = imglist[0]; desone.innerText = 'Cores: '+cores[0]+' | Threads: '+threads[0]; destwo.innerText = 'Base Frequency: '+ base[0]+' GHz | Turbo Frequency: '+turbo[0]+' GHz'; desthree.innerText = pg[0]; desfour.innerText = launch[0]+' | '+lith[0]+' nm | '+tdp[0]+' W TDP'; link.href = info[0];">
+    <div class = "item"><h3 id = "name0" class = "header"></h3><img id = "img0" src = "" width ="100%" alt = ""><h2 id = "price0" class = "header"></h2></div>
+    </button>
     
-	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-9700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg';document.getElementById('core').innerText = '8 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/186604/Intel-Core-i7-9700K-Processor-12M-Cache-up-to-4-90-GHz-';"><div class = "item"><h3 class = "header">i7-9700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg" width ="100%" alt = ""><h2 class = "header">$399.89</h2></div></button>
+	<button style= "width:32%" id = "myBtn2" onclick ="openModal(); pname.innerText = proclist[1]; img.src = imglist[1]; desone.innerText = 'Cores: '+cores[1]+' | Threads: '+threads[1]; destwo.innerText = 'Base Frequency: '+ base[1]+' GHz | Turbo Frequency: '+turbo[1]+' GHz'; desthree.innerText = pg[1]; desfour.innerText = launch[1]+' | '+lith[1]+' nm | '+tdp[1]+' W TDP'; link.href = info[1];">
+    <div class = "item"><h3 id = "name1" class = "header"></h3><img id = "img1" src = "" width ="100%" alt = ""><h2 id = "price1" class = "header"></h2></div></button>
     
-	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-9600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.60 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/134896/Intel-Core-i5-9600K-Processor-9M-Cache-up-to-4-60-GHz-';"><div class = "item"><h3 class = "header">i5-9600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$244.89</h2></div></button>
+	<button style= "width:32%" id = "myBtn3" onclick ="openModal(); pname.innerText = proclist[2]; img.src = imglist[2]; desone.innerText = 'Cores: '+cores[2]+' | Threads: '+threads[2]; destwo.innerText = 'Base Frequency: '+ base[2]+' GHz | Turbo Frequency: '+turbo[2]+' GHz'; desthree.innerText = pg[2]; desfour.innerText = launch[2]+' | '+lith[2]+' nm | '+tdp[2]+' W TDP'; link.href = info[2];">
+    <div class = "item"><h3 id = "name2" class = "header"></h3><img id = "img2" src = "" width ="100%" alt = ""><h2 id = "price2" class = "header"></h2></div></button>
     
-    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126684/Intel-Core-i7-8700K-Processor-12M-Cache-up-to-4-70-GHz-';"><div class = "item"><h3 class = "header">i7-8700k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg" width ="100%" alt = ""><h2 class = "header">$369.99</h2></div></button>
+    <button style= "width:32%" id = "myBtn4" onclick ="openModal(); pname.innerText = proclist[3]; img.src = imglist[3]; desone.innerText = 'Cores: '+cores[3]+' | Threads: '+threads[3]; destwo.innerText = 'Base Frequency: '+ base[3]+' GHz | Turbo Frequency: '+turbo[3]+' GHz'; desthree.innerText = pg[3]; desfour.innerText = launch[3]+' | '+lith[3]+' nm | '+tdp[3]+' W TDP'; link.href = info[3];">
+    <div class = "item"><h3 id = "name3" class = "header"></h3><img id = "img3" src = "" width ="100%" alt = ""><h2 id = "price3" class = "header"></h2></div></button>
     
-    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i7-8700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.60 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126686/Intel-Core-i7-8700-Processor-12M-Cache-up-to-4-60-GHz-';"><div class = "item"><h3 class = "header">i7-8700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>
+   <button style= "width:32%" id = "myBtn5" onclick ="openModal(); pname.innerText = proclist[4]; img.src = imglist[4]; desone.innerText = 'Cores: '+cores[4]+' | Threads: '+threads[4]; destwo.innerText = 'Base Frequency: '+ base[4]+' GHz | Turbo Frequency: '+turbo[4]+' GHz'; desthree.innerText = pg[4]; desfour.innerText = launch[4]+' | '+lith[4]+' nm | '+tdp[4]+' W TDP'; link.href = info[4];">
+    <div class = "item"><h3 id = "name4" class = "header"></h3><img id = "img4" src = "" width ="100%" alt = ""><h2 id = "price4" class = "header"></h2></div></button>
         
-    	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600k'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126685/Intel-Core-i5-8600K-Processor-9M-Cache-up-to-4-30-GHz-';"><div class = "item"><h3 class = "header">i5-8600k</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$259.89</h2></div></button>
+    	<button style= "width:32%" id = "myBtn6" onclick ="openModal(); pname.innerText = proclist[5]; img.src = imglist[5]; desone.innerText = 'Cores: '+cores[5]+' | Threads: '+threads[5]; destwo.innerText = 'Base Frequency: '+ base[5]+' GHz | Turbo Frequency: '+turbo[5]+' GHz'; desthree.innerText = pg[5]; desfour.innerText = launch[5]+' | '+lith[5]+' nm | '+tdp[5]+' W TDP'; link.href = info[5];">
+        <div class = "item"><h3 id = "name5" class = "header"></h3><img id = "img5" src = "" width ="100%" alt = ""><h2 id = "price5" class = "header"></h2></div></button>
     
-  		<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8600'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.10 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/129937/Intel-Core-i5-8600-Processor-9M-Cache-up-to-4-30-GHz-';"><div class = "item"><h3 class = "header">i5-8600</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$249.99</h2></div></button> 
+  		<button style= "width:32%" id = "myBtn7" onclick ="openModal(); pname.innerText = proclist[6]; img.src = imglist[6]; desone.innerText = 'Cores: '+cores[6]+' | Threads: '+threads[6]; destwo.innerText = 'Base Frequency: '+ base[6]+' GHz | Turbo Frequency: '+turbo[6]+' GHz'; desthree.innerText = pg[6]; desfour.innerText = launch[6]+' | '+lith[6]+' nm | '+tdp[6]+' W TDP'; link.href = info[6];">
+        <div class = "item"><h3 id = "name6" class = "header"></h3><img id = "img6" src = "" width ="100%" alt = ""><h2 id = "price6" class = "header"></h2></div></button> 
         
-		 <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8500'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '3.00 GHz up to 4.10 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/129939/Intel-Core-i5-8500-Processor-9M-Cache-up-to-4-10-GHz-';"><div class = "item"><h3 class = "header">i5-8500</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$234.99</h2></div></button>
+		 <button style= "width:32%" id = "myBtn8" onclick ="openModal(); pname.innerText = proclist[7]; img.src = imglist[7]; desone.innerText = 'Cores: '+cores[7]+' | Threads: '+threads[7]; destwo.innerText = 'Base Frequency: '+ base[7]+' GHz | Turbo Frequency: '+turbo[7]+' GHz'; desthree.innerText = pg[7]; desfour.innerText = launch[7]+' | '+lith[7]+' nm | '+tdp[7]+' W TDP'; link.href = info[7];">
+         <div class = "item"><h3 id = "name7" class = "header"></h3><img id = "img7" src = "" width ="100%" alt = ""><h2 id = "price7" class = "header"></h2></div></button>
          
-	 <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'i5-8400'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg';document.getElementById('core').innerText = '6 Cores / 6 Threads'; document.getElementById('cosp').innerText = '2.80 GHz up to 4.00 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Intel 300 Series Chipsets'; document.getElementById('coth').innerText = 'Launched Q4 2017 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://ark.intel.com/products/126687/Intel-Core-i5-8400-Processor-9M-Cache-up-to-4-00-GHz-';"><div class = "item"><h3 class = "header">i5-8400</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
+	  <button style= "width:32%" id = "myBtn9" onclick ="openModal(); pname.innerText = proclist[8]; img.src = imglist[8]; desone.innerText = 'Cores: '+cores[8]+' | Threads: '+threads[8]; destwo.innerText = 'Base Frequency: '+ base[8]+' GHz | Turbo Frequency: '+turbo[8]+' GHz'; desthree.innerText = pg[8]; desfour.innerText = launch[8]+' | '+lith[8]+' nm | '+tdp[8]+' W TDP'; link.href = info[8];">
+     <div class = "item"><h3 id = "name8" class = "header"></h3><img id = "img8" src = "" width ="100%" alt = ""><h2 id = "price8" class = "header"></h2></div></button>	
      
 </div>
 
 <div id = "amd" style = "display:none">
 
-	<button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 7 2700x'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg';document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 105 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-7-2700x';"><div class = "item"><h3 class = "header">Ryzen 7 2700x</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>	
+	<button style= "width:32%" id = "myBtn10" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 7 2700x'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg';document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.70 GHz up to 4.30 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 105 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-7-2700x';"><div class = "item"><h3 class = "header">Ryzen 7 2700x</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$309.99</h2></div></button>	
     
-    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 7 2700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg';document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.10 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-7-2700';"><div class = "item"><h3 class = "header">Ryzen 7 2700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$269.99</h2></div></button>	
+    <button style= "width:32%" id = "myBtn11" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 7 2700'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg';document.getElementById('core').innerText = '8 Cores / 16 Threads'; document.getElementById('cosp').innerText = '3.20 GHz up to 4.10 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-7-2700';"><div class = "item"><h3 class = "header">Ryzen 7 2700</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$269.99</h2></div></button>	
     
-    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2600x'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.20 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-5-2600x';"><div class = "item"><h3 class = "header">Ryzen 5 2600x</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$219.99</h2></div></button>	
+    <button style= "width:32%" id = "myBtn12" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2600x'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 4.20 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 95 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-5-2600x';"><div class = "item"><h3 class = "header">Ryzen 5 2600x</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$219.99</h2></div></button>	
     
-    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2600'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.40 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-5-2600';"><div class = "item"><h3 class = "header">Ryzen 5 2600</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
+    <button style= "width:32%" id = "myBtn13" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2600'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg';document.getElementById('core').innerText = '6 Cores / 12 Threads'; document.getElementById('cosp').innerText = '3.40 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q2 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/cpu/amd-ryzen-5-2600';"><div class = "item"><h3 class = "header">Ryzen 5 2600</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$199.99</h2></div></button>	
     
-     <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2400G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg';document.getElementById('core').innerText = '4 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-5-2400g';"><div class = "item"><h3 class = "header">Ryzen 5 2400G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$159.99</h2></div></button>	
+     <button style= "width:32%" id = "myBtn14" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 5 2400G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg';document.getElementById('core').innerText = '4 Cores / 8 Threads'; document.getElementById('cosp').innerText = '3.60 GHz up to 3.90 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-5-2400g';"><div class = "item"><h3 class = "header">Ryzen 5 2400G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$159.99</h2></div></button>	
     
-    <button style= "width:32%" id = "myBtn" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 3 2200G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg';document.getElementById('core').innerText = '4 Cores / 4 Threads'; document.getElementById('cosp').innerText = '3.50 GHz up to 3.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-3-2200g';"><div class = "item"><h3 class = "header">Ryzen 3 2200G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$99.99</h2></div></button>	
+    <button style= "width:32%" id = "myBtn15" onclick ="document.getElementById('myModal').style.display = 'block'; document.getElementById('procName').innerText = 'Ryzen 3 2200G'; document.getElementById('procImg').src = 'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg';document.getElementById('core').innerText = '4 Cores / 4 Threads'; document.getElementById('cosp').innerText = '3.50 GHz up to 3.70 GHz Turbo'; document.getElementById('cocomp').innerText = 'Compatible only with Motherboards based on Socket AM4'; document.getElementById('coth').innerText = 'Launched Q1 2018 | 14 nm | TDP 65 W'; document.getElementById('cgpu').href = 'https://www.amd.com/en/products/apu/amd-ryzen-3-2200g';"><div class = "item"><h3 class = "header">Ryzen 3 2200G</h3><img src ="https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg" width ="100%" alt = ""><h2 class = "header" style = "background-color:none">$99.99</h2></div></button>	
     
     
     
@@ -125,12 +148,92 @@
 
 
 <script>
+var proclist = ['i9-9900k', 'i7-9700k', 'i5-9600k',
+    				'i7 8700k', 'i7 8700', 'i5 8600k',
+                    'i5 8600', 'i5 8500', 'i5 8400',
+                    'Ryzen 7 2700x', 'Ryzen 7 2700', 'Ryzen 5 2600x',
+                    'Ryzen 5 2600', 'Ryzen 5 2400G', 'Ryzen 3 2200G'];                                    
+var priceList = ['$549', '$399', '$259',
+				 '$369', '$305', '$259',
+                 '$239', '$224', '$199'];
+                    
+var cores = ['8', '8', '6', 
+			 '6', '6', '6',
+             '6', '6', '6'];
+            
+var threads = ['12', '8', '6', 
+			   '12', '12', '6', 
+               '6', '6', '6'];
+               
+var lith = ['14', '14', '14', 
+			'14', '14', '14', 
+            '14', '14', '14'];
+            
+var base = ['3.60', '3.60', '3.70', 
+			'3.70', '3.20', '3.60', 
+            '3.10', '3.00', '2.80'];
+            
+var turbo = ['5.00', '4.90', '4.60', 
+			 '4.70', '4.60', '4.30', 
+             '4.30', '4.10', '4.00'];
+             
+var tdp = ['95', '95', '95', 
+		   '95', '65', '95', 
+           '65', '65', '65'];
+
+var pg = ['Compatible only with Motherboards based on Intel 300 Series Chipsets', 
+'Intel® UHD Graphics 630', 
+'Intel® UHD Graphics 630', 
+'Intel® UHD Graphics 630', 
+'Intel® UHD Graphics 630', 
+'Intel® UHD Graphics 630',
+'Intel® UHD Graphics 630',
+'Intel® UHD Graphics 630',
+'Intel® UHD Graphics 630'];
+
+var launch = ['Q4 2018', 'Q4 2018', 'Q4 2018', 'Q4 2017', 'Q4 2017','Q4 2017', 'Q2 2018', 'Q2 2018', 'Q4 2017'];
+
+var info = ['https://ark.intel.com/products/186605/Intel-Core-i9-9900K-Processor-16M-Cache-up-to-5-00-GHz',
+'https://ark.intel.com/products/186604/Intel-Core-i7-9700K-Processor-12M-Cache-up-to-4-90-GHz-',
+'https://ark.intel.com/products/134896/Intel-Core-i5-9600K-Processor-9M-Cache-up-to-4-60-GHz-',
+'https://ark.intel.com/products/126684/Intel-Core-i7-8700K-Processor-12M-Cache-up-to-4-70-GHz-',
+'https://ark.intel.com/products/126685/Intel-Core-i5-8600K-Processor-9M-Cache-up-to-4-30-GHz-',
+'https://ark.intel.com/products/126685/Intel-Core-i5-8600K-Processor-9M-Cache-up-to-4-30-GHz-',
+'https://ark.intel.com/products/129937/Intel-Core-i5-8600-Processor-9M-Cache-up-to-4-30-GHz-',
+'https://ark.intel.com/products/129939/Intel-Core-i5-8500-Processor-9M-Cache-up-to-4-10-GHz-',
+'https://ark.intel.com/products/126687/Intel-Core-i5-8400-Processor-9M-Cache-up-to-4-00-GHz-'];
+
+
+   	var imglist= ['https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-957-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-958-V03.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-959-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-827-Z01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-826-Z01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-825-Z01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-885-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-883-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-117-824-Z01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-499-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-498-V01.jpg', 
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-497-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-496-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-480-V01.jpg',
+    'https://c1.neweggimages.com/NeweggImage/ProductImage/19-113-481-V01.jpg'];
+    
+     var i;
+     for (i=0; i < proclist.length; i++) {
+     	document.getElementById('name'+i).innerHTML = proclist[i];
+        document.getElementById('price'+i).innerHTML = priceList[i];
+        document.getElementById('img'+i).src = imglist[i];
+     }
+    
 	function adjops() {
 		var x = document.getElementById("intel");
         var y = document.getElementById("amd");
         var nores = document.getElementById("noresults");
         var showintel = document.getElementById("showintel");
         var showamd = document.getElementById("showamd");
+        var i;
         
         if (showintel.checked == true && showamd.checked == true) {
         	nores.style.display = "none";
@@ -142,7 +245,6 @@
                 y.style.display = "none";
         } else if (showamd.checked == true) {
         		nores.style.display = "none";
-
                 x.style.display = "none";
                 y.style.display = "inline-block";
         } else {
@@ -153,8 +255,6 @@
     }
 		
 var modal = document.getElementById('myModal');
-
-var btn = document.getElementById("myBtn");
 
 var span = document.getElementsByClassName("close")[0];
 
